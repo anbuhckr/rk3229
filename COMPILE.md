@@ -12,9 +12,9 @@
 ### Prepare the build environment
 
 ```
-$ git clone https://github.com/anbuhckr/rk3229.git
 $ sudo apt install make python3-pip python3-pyelftools gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf -y
 $ pip3 install pycryptodome
+$ git clone https://github.com/anbuhckr/rk3229.git
 $ mkdir build
 $ build() { log=$1; shift 1; (date; echo; time make $@) 2>&1 | tee $log; }
 $ export BUILD=`readlink -f build`
