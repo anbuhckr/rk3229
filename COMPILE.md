@@ -12,7 +12,7 @@
 ### Prepare the build environment
 
 ```
-$ sudo apt install make python3-pip python3-pyelftools gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf bison flex -y
+$ sudo apt install make python3-pip python3-pyelftools gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf bison flex device-tree-compiler -y
 $ pip3 install pycryptodome
 $ mkdir build
 $ build() { log=$1; shift 1; (date; echo; time make $@) 2>&1 | tee $log; }
