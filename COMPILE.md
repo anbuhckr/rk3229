@@ -54,6 +54,7 @@ $ patch -Np1 < ../rk3229/patch/u-boot/sdmmc-dm-pre-reloc.patch
 $ patch -Np1 < ../rk3229/patch/u-boot/0001-rockchip-sdram-fix-DRAM-bank-declaration-around-OP-T.patch
 $ patch -Np0 < ../rk3229/patch/u-boot/xms6-rk3229_defconfig.patch
 $ make xms6-rk3229_defconfig
+$ sed -i 's/YYLTYPE yylloc/extern YYLTYPE yylloc/g' scripts/dtc/dtc-lexer.lex.c
 $ build build-uboot.log -j2 
 ```
 
