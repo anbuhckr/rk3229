@@ -12,6 +12,7 @@
 ### Prepare the build environment
 
 ```
+$ git clone https://github.com/anbuhckr/rk3229.git
 $ sudo apt install make python3-pip python3-pyelftools gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf -y
 $ pip3 install pycryptodome
 $ mkdir build
