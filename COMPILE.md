@@ -3,7 +3,7 @@
 
 ### Prequisites
 
-- A host computer running a UNIX-like operating system
+- A host computer running a Ubuntu 21.04
 - An armhf toolchain
 - GNU make
 - git
@@ -11,9 +11,9 @@
 
 ### Prepare the build environment
 
-Substitute *arm-linux-gnueabihf-* with your toolchain's target triplet, if needed.
-
 ```
+$ sudo apt install make python3-pip python3-pyelftools gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf -y
+$ pip3 install pycryptodome
 $ mkdir build
 $ build() { log=$1; shift 1; (date; echo; time make $@) 2>&1 | tee $log; }
 $ export BUILD=`readlink -f build`
