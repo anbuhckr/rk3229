@@ -2,7 +2,7 @@
 
 ### Introduction
 
-This documentation details my experiences with building and installing *mainline versions of OP-TEE, U-Boot and Linux* for systems based on Rockchip's RK3229. The primary focus of my efforts has been, and remains, on the Mecer Xtreme Mini S6, but some minor testing has been performed with a few boards sold under the MXQ brand due to reader request.
+This documentation details my experiences with building and installing *mainline versions of OP-TEE, U-Boot and Linux* for systems based on Rockchip's RK3229. The primary focus of my efforts has been, and remains, on the MXQ 4K / MXQ-Pro 4K.
 
 If you decide to use any of the information presented here - think for yourself and acknowledge that you, alone, take full responsibility for your own actions.
 
@@ -24,31 +24,13 @@ If you decide to use any of the information presented here - think for yourself 
      - [U-Boot + Linux Installation (SD/MMC)](SDMMC-INSTALL.md)
 
 
-- #### Partition Replacement
-
-     This approach uses the bootloader and Rockchip partitioning scheme shipped by the vendor. I do not pursue this approach since enjoying success via Full Installation. 
-
-     *This will not work for devices that have onboard NAND flash instead of an eMMC, as mainline Linux does not have a driver for the Rockchip NAND controller.*
-
-     - [Onboard Flash Partition Replacement](PARTITION-REPLACEMENT.md)
-
-
 ### Device Findings
-
-- #### Mecer Xtreme Mini S6
-    | Procedure                            | Status  | Remarks                       |
-    |--------------------------------------|---------|-------------------------------|
-    | U-Boot + Linux Installation (eMMC)   | OK      | -                             |
-    | U-Boot + Linux Installation (SD/MMC) | OK      | -                             |
-    | Onboard Flash Partition Replacement  | OK      | Unresponsive after 30 minutes |
-
 
 - #### MXQ 4K / MXQ-Pro 4K
     | Procedure                            | Status         | Remarks                                       |
     |--------------------------------------|----------------|-----------------------------------------------|
-    | U-Boot + Linux Installation (eMMC)   | Not Applicable | Device does not have an eMMC                  |
+    | U-Boot + Linux Installation (eMMC)   | Pending        | -                                             |
     | U-Boot + Linux Installation (SD/MMC) | OK             | -                                             |
-    | Onboard Flash Partition Replacement  | Pending        | No kernel driver for Rockchip NAND controller |
 
 
 ### Hardware Support
@@ -80,5 +62,6 @@ If you decide to use any of the information presented here - think for yourself 
 
 Thank you to the following people for their assistance in making this process possible.
 
+- [Justin Swartz](https://github.com/jhswartz/rk3229)
 - Heiko Stübner, for answers and recommendations
 - Fabio Bassa, for testing
