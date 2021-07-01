@@ -24,7 +24,7 @@ Momentarily disable the eMMC by shorting clock to ground upon boot.
 ##### Option 2
 Boot into the proprietary loader's ROCKUSB mode, and then switch to MASKROM mode.
 ```
-# sudo rkdeveloptool rd 3
+# sudo rkdeveloptool rd 
 ```
 
 
