@@ -24,13 +24,14 @@ Momentarily disable the eMMC by shorting clock to ground upon boot.
 ##### Option 2
 Boot into the proprietary loader's ROCKUSB mode, and then switch to MASKROM mode.
 ```
-# sudo rkdeveloptool rd 
+# sudo rkdeveloptool rd 3
 ```
 
 
 ### Push the proprietary loader for eMMC access via USB
 ```
-# sudo rkdeveloptool db rk322x_loader_at_v1.08.256.bin 
+# wget https://github.com/anbuhckr/rk3229/releases/download/v0.17/rk322x_loader_v1.10.256.bin
+# sudo rkdeveloptool db rk322x_loader_v1.10.256.bin
 ```
 
 
