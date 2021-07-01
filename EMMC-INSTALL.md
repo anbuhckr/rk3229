@@ -30,8 +30,8 @@ Boot into the proprietary loader's ROCKUSB mode, and then switch to MASKROM mode
 
 ### Push the proprietary loader for eMMC access via USB
 ```
-# wget https://github.com/anbuhckr/rk3229/releases/download/v0.17/rk322x_loader_v1.10.256.bin
-# sudo rkdeveloptool db rk322x_loader_v1.10.256.bin
+# wget https://github.com/anbuhckr/rk3229/releases/download/v0.18/all.bin
+# sudo rkdeveloptool db all.bin
 ```
 
 
@@ -51,14 +51,14 @@ Boot into the proprietary loader's ROCKUSB mode, and then switch to MASKROM mode
 
 ### Write U-Boot to the eMMC
 ```
-# sudo rkdeveloptool wl 0x0040 idbloader.img
-# sudo rkdeveloptool wl 0x4000 u-boot.itb 
+# sudo rkdeveloptool wl 0x0040 build/u-boot/idbloader.img
+# sudo rkdeveloptool wl 0x4000 build/u-boot/u-boot.itb 
 ```
 
 
 ### Reboot the device
 ```
-# rkdeveloptool rd
+# sudo rkdeveloptool rd
 ```
 
 
