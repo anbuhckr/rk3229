@@ -22,10 +22,10 @@ $ export REPLACEMENT=`readlink -f $BUILD/replacement`
 $ export ROOTFS=`readlink -f $REPLACEMENT/rootfs`
 $ export INITRD=`readlink -f $REPLACEMENT/initrd`
 $ export SYSTEM=`readlink -f $REPLACEMENT/system`
-$ mkdir $REPLACEMENT
-$ mkdir $ROOTFS
-$ mkdir $INITRD
-$ mkdir $SYSTEM
+$ sudo mkdir $REPLACEMENT
+$ sudo mkdir $ROOTFS
+$ sudo mkdir $INITRD
+$ sudo mkdir $SYSTEM
 ```
 
 
