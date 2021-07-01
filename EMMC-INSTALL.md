@@ -6,11 +6,10 @@
 - An RK3229 based device
 - Physical access to the appropriate UART and eMMC
 - A serial communications program for UART access
-- Compile [rkdeveloptool](https://github.com/rockchip-linux/rkdeveloptool)
 - Merge the RK322XATMINIALL loader from [rkbin](https://github.com/rockchip-linux/rkbin)
 - [Compile OP-TEE, U-Boot and Linux for RK3229](COMPILE.md)
 
-##### Compile rkdeveloptool
+##### Download rkdeveloptool
 ```
 # wget https://github.com/rockchip-linux/rkbin/raw/master/tools/rkdeveloptool
 # mv rkdeveloptool /usr/local/bin/rkdeveloptool
