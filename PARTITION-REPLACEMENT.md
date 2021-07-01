@@ -17,6 +17,11 @@ This guide is written from the perspective of a device whose board features an e
 ### Initialize the environment
 
 ```
+$ wget https://github.com/linux-rockchip/rkflashtool.git
+$ cd rkflashtool
+$ sudo apt-get install librtlsdr-dev libusb-1.0-0-dev libpthread-stubs0-dev
+$ make
+$ sudo make install
 $ export SCRIPTS=`readlink -f $BUILD/scripts`
 $ export REPLACEMENT=`readlink -f $BUILD/replacement`
 $ export ROOTFS=`readlink -f $REPLACEMENT/rootfs`
