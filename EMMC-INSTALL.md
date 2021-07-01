@@ -64,6 +64,14 @@ Boot into the proprietary loader's ROCKUSB mode, and then switch to MASKROM mode
 
 ### Connect to UART2
 ```
+# sudo apt install libreadline-dev 
+# wget http://www.knossos.net.nz/downloads/dterm-0.5.tgz
+# tar -xvzf dterm-0.5.tgz
+# rm dterm-0.5.tgz
+# cd dterm-0.5
+# make 
+# sudo mv dterm /usr/local/bin/dterm
+# chmod +x /usr/local/bin/dterm
 # dterm /dev/ttyUSB0 1500000 8 n 1
 TPL InitReturning to boot ROM...
 
