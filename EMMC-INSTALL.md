@@ -12,7 +12,7 @@
 ##### Download rkdeveloptool
 ```
 # wget https://github.com/rockchip-linux/rkbin/raw/master/tools/rkdeveloptool
-# mv rkdeveloptool /usr/local/bin/rkdeveloptool
+# sudo mv rkdeveloptool /usr/local/bin/rkdeveloptool
 ```
 
 ### Enter MASKROM mode
