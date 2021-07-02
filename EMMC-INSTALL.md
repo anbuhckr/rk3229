@@ -13,7 +13,6 @@
 ```
 # wget https://github.com/rockchip-linux/rkbin/raw/master/tools/rkdeveloptool
 # sudo mv rkdeveloptool /usr/local/bin/rkdeveloptool
-# chmod +x /usr/local/bin/rkdeveloptool
 ```
 
 ### Enter MASKROM mode
