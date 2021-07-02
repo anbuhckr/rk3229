@@ -35,6 +35,43 @@ $ export INITRD=`readlink -f $REPLACEMENT/initrd`
 $ export SYSTEM=`readlink -f $REPLACEMENT/system`
 ```
 
+### Enter MASKROM mode
+
+##### Option 1
+Momentarily disable the eMMC by shorting clock to ground upon boot.
+
+##### Option 2
+Boot into the proprietary loader's ROCKUSB mode, and then switch to MASKROM mode.
+```
+# sudo rkdeveloptool rd 3
+```
+
+
+### Push the proprietary loader for eMMC access via USB
+```
+# wget https://github.com/anbuhckr/rk3229/releases/download/v0.18/all.bin
+# sudo rkdeveloptool db all.bin
+```
+
+
+### Erase the existing eMMC loader
+```
+# sudo rkdeveloptool ef
+```
+
+
+### Write stock img to the eMMC
+```
+# wget https://github.com/anbuhckr/rk3229/releases/download/v0.19/Armbian_21.08.0-trunk_Rk322x-box_buster_legacy_4.4.194_minimal.img.xz
+# unxz Armbian_21.08.0-trunk_Rk322x-box_buster_legacy_4.4.194_minimal.img.xz
+# sudo rkdeveloptool wl 0x0 Armbian_21.08.0-trunk_Rk322x-box_buster_legacy_4.4.194_minimal.img
+```
+
+
+### Reboot the device
+```
+# rkdeveloptool rd
+```
 
 ### Enter loader (rockusb) mode
 
