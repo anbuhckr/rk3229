@@ -48,8 +48,8 @@ Boot into the proprietary loader's ROCKUSB mode, and then switch to MASKROM mode
 
 ### Push the proprietary loader for eMMC access via USB
 ```
-# wget https://github.com/anbuhckr/rk3229/releases/download/v0.18/all.bin
-# sudo rkdeveloptool db all.bin
+# wget https://github.com/knaerzche/rkbin/raw/le/rk32/rk322x_loader_v1.10.256.bin
+# sudo rkdeveloptool db rk322x_loader_v1.10.256.bin
 ```
 
 
@@ -65,16 +65,6 @@ Boot into the proprietary loader's ROCKUSB mode, and then switch to MASKROM mode
 # unxz Armbian_21.08.0-trunk_Rk322x-box_buster_legacy_4.4.194_minimal.img.xz
 # sudo rkdeveloptool wl 0x0 Armbian_21.08.0-trunk_Rk322x-box_buster_legacy_4.4.194_minimal.img
 ```
-
-
-### Reboot the device
-```
-# sudo rkdeveloptool rd
-```
-
-### Enter loader (rockusb) mode
-
-Insert one end of the USB-A Male to USB-A Male cable into your host computer, then press and hold the device's Loader button before inserting the other end of the cable into the device's Download USB port. Release the Loader button after a few seconds.
 
 
 ### Prepare the parameters
@@ -194,10 +184,10 @@ EOF
 
 ```
 # cd $BUILD
+# sudo rkflashtool P < $BUILD/parameters
 # sudo rkflashtool w resource < $REPLACEMENT/resource.img
 # sudo rkflashtool w kernel < $REPLACEMENT/kernel.img
 # sudo rkflashtool w boot < $REPLACEMENT/boot.img
-# sudo rkflashtool P < $BUILD/parameters
 ```
 
 
