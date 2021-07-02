@@ -23,16 +23,15 @@ $ cd rkflashtool
 $ make
 $ sudo cp rkflashtool rkcrc rkunpack rkunsign /usr/local/bin
 $ cd $BUILD
-$ mkdir scripts
-$ mkdir replacement
-$ touch replacement/rootfs
-$ touch replacement/initrd
-$ touch replacement/system
 $ export SCRIPTS=`readlink -f $BUILD/scripts`
 $ export REPLACEMENT=`readlink -f $BUILD/replacement`
 $ export ROOTFS=`readlink -f $REPLACEMENT/rootfs`
 $ export INITRD=`readlink -f $REPLACEMENT/initrd`
 $ export SYSTEM=`readlink -f $REPLACEMENT/system`
+$ mkdir $REPLACEMENT
+$ mkdir $ROOTFS
+$ mkdir $INITRD
+$ mkdir $SYSTEM
 ```
 
 ### Enter MASKROM mode
