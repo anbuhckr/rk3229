@@ -26,7 +26,7 @@ $ export CROSS_COMPILE=arm-linux-gnueabihf-
 ### Build OP-TEE
 
 ```
-$ cd $BUILD
+$ cd build
 $ git clone https://github.com/anbuhckr/rk3229.git
 $ git clone https://github.com/OP-TEE/optee_os.git
 $ cd optee_os
