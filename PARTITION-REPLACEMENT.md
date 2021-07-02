@@ -33,37 +33,12 @@ $ mkdir $SYSTEM
 
 Insert one end of the USB-A Male to USB-A Male cable into your host computer, then press and hold the device's Loader button before inserting the other end of the cable into the device's Download USB port. Release the Loader button after a few seconds.
 
-
-### Enumerate partitions
-
-Rockchip's branches of U-boot and the Linux kernel rely on a comma separated list of partition declarations, stored in the value of the **mtdparts** kernel command line parameter, to determine partition boundaries instead of using an on-disk partition table.
-
-Each declaration in the partition list is formatted as **size**@**offset**(***name***) where **size** and **offset** are specified in sectors, and a size of **-** indicates the use of all subsequent sectors until the end of the disk.
+### Prepare the param
 
 ```
-# rkflashtool p > $REPLACEMENT/parameters
-# sed -e '/^CMDLINE:/!d' -e 's/^CMDLINE:.*mtdparts=rk29xxnand:\(.*\)$/\1/g' -e 's/,/\n/g' $REPLACEMENT/parameters
-0x00002000@0x00002000(uboot)
-0x00004000@0x00004000(trust)
-0x00002000@0x00008000(misc)
-0x00000800@0x0000A000(baseparamer)
-0x00007800@0x0000A800(resource)
-0x00006000@0x00012000(kernel)
-0x0000C000@0x00018000(boot)
-0x00010000@0x00024000(recovery)
-0x00020000@0x00034000(backup)
-0x00040000@0x00054000(cache)
-0x00008000@0x00094000(metadata)
-0x00002000@0x0009C000(kpanic)
-0x00400000@0x0009E000(system)
--@0x0049E000(userdata)
-```
-
-
-### Prepare the kernel command line
-
-```
-# sed -i -e 's|^\(CMDLINE:\).*\(mtdparts=rk29xxnand:.*\)$|\1console=ttyS2,1500000n8 console=tty0 debug video=HDMI-A-1:1920x1080@60 \2|g' $REPLACEMENT/parameters
+# cat > param << EOF
+CMDLINE:console=earlycon=uart8250,mmio32,0x11030000 console=uart8250,mmio32,0x11030000,1500000n8 rw root=/dev/rknand_system rootwait rootfstype=ext4 init=/sbin/init initrd=0x62000000,0x00800000 mtdparts=rk29xxnand:0x00002000@0x00002000(uboot),0x00006800@0x00004000(trust),0x00007800@0x0000A800(resource),0x00006000@0x00012000(kernel),0x00010000@0x00018000(boot),-@0x00028000(system)
+EOF
 ```
 
 
