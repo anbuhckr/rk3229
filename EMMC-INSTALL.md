@@ -30,8 +30,8 @@ Boot into the proprietary loader's ROCKUSB mode, and then switch to MASKROM mode
 
 ### Push the proprietary loader for eMMC access via USB
 ```
-# wget https://github.com/anbuhckr/rk3229/releases/download/v0.18/all.bin
-# sudo rkdeveloptool db all.bin
+# wget https://github.com/knaerzche/rkbin/raw/le/rk32/rk322x_loader_v1.10.256.bin
+# sudo rkdeveloptool db rk322x_loader_v1.10.256.bin
 ```
 
 
