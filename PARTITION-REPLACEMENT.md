@@ -70,7 +70,7 @@ Boot into the proprietary loader's ROCKUSB mode, and then switch to MASKROM mode
 
 ### Reboot the device
 ```
-# rkdeveloptool rd
+# sudo rkdeveloptool rd
 ```
 
 ### Enter loader (rockusb) mode
@@ -85,7 +85,7 @@ Rockchip's branches of U-boot and the Linux kernel rely on a comma separated lis
 Each declaration in the partition list is formatted as **size**@**offset**(***name***) where **size** and **offset** are specified in sectors, and a size of **-** indicates the use of all subsequent sectors until the end of the disk.
 
 ```
-# rkflashtool p > $REPLACEMENT/parameters
+# sudo rkflashtool p > $REPLACEMENT/parameters
 # sed -e '/^CMDLINE:/!d' -e 's/^CMDLINE:.*mtdparts=rk29xxnand:\(.*\)$/\1/g' -e 's/,/\n/g' $REPLACEMENT/parameters
 0x00002000@0x00002000(uboot)
 0x00004000@0x00004000(trust)
