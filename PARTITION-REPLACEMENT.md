@@ -116,6 +116,7 @@ Each declaration in the partition list is formatted as **size**@**offset**(***na
 The following commands bootstrap the current stable release of Devuan, if you wish to use another distribution copy it to $ROOTFS instead.
 
 ```
+# sudo apt install qemu-user-static -y
 # qemu-debootstrap --arch armhf stable $ROOTFS http://pkgmaster.devuan.org/merged
 # chroot $ROOTFS /bin/bash
 # > /etc/motd
