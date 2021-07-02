@@ -22,7 +22,7 @@ $ git clone https://github.com/linux-rockchip/rkflashtool
 $ cd rkflashtool
 $ make
 $ sudo cp rkflashtool rkcrc rkunpack rkunsign /usr/local/bin
-$ chmod +x /usr/local/bin/rkflashtool
+$ cd $BUILD
 $ mkdir scripts
 $ mkdir replacement
 $ touch replacement/rootfs
