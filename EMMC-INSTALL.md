@@ -44,7 +44,7 @@ Boot into the proprietary loader's ROCKUSB mode, and then switch to MASKROM mode
 
 ### Erase the existing eMMC loader
 ```
-# rkdeveloptool ef
+# sudo rkdeveloptool ef
 ```
 
 
