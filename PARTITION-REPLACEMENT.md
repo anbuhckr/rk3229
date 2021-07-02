@@ -23,7 +23,7 @@ $ cd rkflashtool
 $ make
 $ sudo cp rkflashtool rkcrc rkunpack rkunsign /usr/local/bin
 $ cd $BUILD
-$ export SCRIPTS=`readlink -f $BUILD/scripts`
+$ export SCRIPTS=`readlink -f $BUILD/rk3229/scripts`
 $ export REPLACEMENT=`readlink -f $BUILD/replacement`
 $ export ROOTFS=`readlink -f $REPLACEMENT/rootfs`
 $ export INITRD=`readlink -f $REPLACEMENT/initrd`
@@ -127,14 +127,14 @@ The libraries that you will need to copy may differ if you have opted to use a d
 ```
 # cd $INITRD
 # mkdir -p bin dev etc lib lib/arm-linux-gnueabihf mnt proc sbin tmp
-# mknod -m 600 dev/console c 5 1
-# mknod -m 600 dev/ttyS2 c 4 66
+# sudo mknod -m 600 dev/console c 5 1
+# sudo mknod -m 600 dev/ttyS2 c 4 66
 # cp $ROOTFS/lib/ld-linux-armhf.so.3 lib/
-# cp $ROOTFS/lib/arm-linux-gnueabihf/{libc.so.6,libfdisk.so.1,libuuid.so.1,libblkid.so.1,libsmartcols.so.1,libtinfo.so.5} lib/arm-linux-gnueabihf/
+# cp $ROOTFS/lib/arm-linux-gnueabihf/{libc.so.6,libfdisk.so.1,libuuid.so.1,libblkid.so.1,libsmartcols.so.1,libtinfo.so.6} lib/arm-linux-gnueabihf/
 # cp $ROOTFS/bin/busybox bin/
 # cp $ROOTFS/sbin/{agetty,fdisk} sbin/
 # for applet in `cat $ROOTFS/tmp/applets`; do mkdir -p `dirname $applet` && ln -s /bin/busybox $applet; done
-# rm $ROOTFS/tmp/applets
+# sudo rm $ROOTFS/tmp/applets
 # cat > etc/inittab << EOF
 ::sysinit:/bin/mount -t proc none /proc
 ::sysinit:/bin/mount -t devtmpfs none /dev
@@ -176,7 +176,7 @@ else
         exec /sbin/init
 fi
 EOF
-# chmod 755 sbin/{inituart,init}
+# sudo chmod 755 sbin/{inituart,init}
 # find . | cpio -o -H newc | gzip -9 > $BUILD/initrd.gz
 ```
 
@@ -193,10 +193,11 @@ EOF
 ### Push the images and modified parameters
 
 ```
-# rkflashtool w resource < $REPLACEMENT/resource.img
-# rkflashtool w kernel < $REPLACEMENT/kernel.img
-# rkflashtool w boot < $REPLACEMENT/boot.img
-# rkflashtool P < $REPLACEMENT/parameters
+# cd $BUILD
+# sudo rkflashtool w resource < $REPLACEMENT/resource.img
+# sudo rkflashtool w kernel < $REPLACEMENT/kernel.img
+# sudo rkflashtool w boot < $REPLACEMENT/boot.img
+# sudo rkflashtool P < $BUILD/parameters
 ```
 
 
