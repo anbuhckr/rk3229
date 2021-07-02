@@ -26,7 +26,7 @@ $ export CROSS_COMPILE=arm-linux-gnueabihf-
 ### Build OP-TEE
 
 ```
-$ cd build
+$ cd $BUILD
 $ git clone https://github.com/anbuhckr/rk3229.git
 $ git clone https://github.com/OP-TEE/optee_os.git
 $ cd optee_os
@@ -38,7 +38,7 @@ $ build build-optee.log CFG_TEE_BENCHMARK=n CFG_TEE_CORE_LOG_LEVEL=3 DEBUG=1 PLA
 ### Build U-Boot
 
 ```
-$ cd ../build
+$ cd $BUILD
 $ git clone git://git.denx.de/u-boot.git
 $ cd u-boot
 $ git checkout -b v2020.01/rk3229 v2020.01
