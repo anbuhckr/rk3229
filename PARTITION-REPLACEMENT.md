@@ -17,11 +17,11 @@ This guide is written from the perspective of a device whose board features an e
 ### Initialize the environment
 
 ```
-$ wget https://github.com/linux-rockchip/rkflashtool.git
+$ sudo apt-get install build-essential libusb-1.0-0-dev
+$ git clone https://github.com/linux-rockchip/rkflashtool
 $ cd rkflashtool
-$ sudo apt-get install librtlsdr-dev libusb-1.0-0-dev libpthread-stubs0-dev
 $ make
-$ sudo make install
+$ sudo cp rkflashtool rkcrc rkunpack rkunsign /usr/local/bin
 $ export SCRIPTS=`readlink -f $BUILD/scripts`
 $ export REPLACEMENT=`readlink -f $BUILD/replacement`
 $ export ROOTFS=`readlink -f $REPLACEMENT/rootfs`
