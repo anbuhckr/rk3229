@@ -44,8 +44,7 @@ Boot into the proprietary loader's ROCKUSB mode, and then switch to MASKROM mode
 
 ### Erase the existing eMMC loader
 ```
-# dd if=/dev/zero of=zero-loader.img bs=512 count=$((0x4000))
-# sudo rkdeveloptool wl 0x0000 zero-loader.img
+# sudo rkdeveloptool ef
 ```
 
 
