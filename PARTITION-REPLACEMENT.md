@@ -22,15 +22,17 @@ $ git clone https://github.com/linux-rockchip/rkflashtool
 $ cd rkflashtool
 $ make
 $ sudo cp rkflashtool rkcrc rkunpack rkunsign /usr/local/bin
+$ chmod +x /usr/local/bin/rkflashtool
+$ mkdir scripts
+$ mkdir replacement
+$ touch replacement/rootfs
+$ touch replacement/initrd
+$ touch replacement/system
 $ export SCRIPTS=`readlink -f $BUILD/scripts`
 $ export REPLACEMENT=`readlink -f $BUILD/replacement`
 $ export ROOTFS=`readlink -f $REPLACEMENT/rootfs`
 $ export INITRD=`readlink -f $REPLACEMENT/initrd`
 $ export SYSTEM=`readlink -f $REPLACEMENT/system`
-$ sudo mkdir $REPLACEMENT
-$ sudo mkdir $ROOTFS
-$ sudo mkdir $INITRD
-$ sudo mkdir $SYSTEM
 ```
 
 
