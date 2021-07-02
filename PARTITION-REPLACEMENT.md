@@ -70,6 +70,7 @@ Boot into the proprietary loader's ROCKUSB mode, and then switch to MASKROM mode
 ### Prepare the parameters
 
 ```
+# cd $BUILD
 # cat > parameters << EOF
 FIRMWARE_VER:1.0.0
 MACHINE_MODEL:rk322x
